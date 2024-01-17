@@ -10,10 +10,10 @@
 #import "React/RCTBridgeModule.h"
 #import "React/RCTEventEmitter.h"
 
-@interface RCT_EXTERN_MODULE(Duckdb, RCTEventEmitter)
+@interface RCT_EXTERN_MODULE(DuckDb, NSObject)
 
-RCT_EXTERN_METHOD(increment:(RCTResponseSenderBlock)callback);
-RCT_EXTERN_METHOD(getTableData:(RCTResponseSenderBlock)callback);
-
+RCT_EXTERN_METHOD(runQuery:(NSString *)query
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
 @end
 
